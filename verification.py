@@ -1,4 +1,4 @@
-import tempmail
+import tempMail
 from bs4 import BeautifulSoup
 import json
 
@@ -7,7 +7,7 @@ while True:
     email = input("email: ")
     login = email.split("@")[0]
     domain = email.split("@")[1]
-    mail = tempmail.TempMail(login=login, domain=domain)
+    mail = tempMail.TempMail(login=login, domain=domain)
     html = mail.get_single_email()['body']
     soup = BeautifulSoup(html, 'html.parser')
     strong_elements = soup.find_all('strong')
